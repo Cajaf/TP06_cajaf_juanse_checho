@@ -1,0 +1,10 @@
+<h1>Datos familiares de @ViewBag.Nombre </h1>
+ <ul>
+ @foreach(DatoFamiliar item in ViewBag.familiares)
+    {
+        <li>Nombre: @item.Nombre Apellido: @item.Apellido Parentesco: @item.Parentesco</li>
+    }
+ </ul>
+ 
+ 
+    

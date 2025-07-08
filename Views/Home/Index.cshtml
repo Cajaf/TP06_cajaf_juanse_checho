@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<h1>Presentacion del grupo</h1>
+<section>
+    
+    
+    @foreach(Integrante item in ViewBag.Integrantes.Values)
+    {
+        <div>
+        <h2>@item.DatosPersonales.Nombre</h2>
+        <a href='@Url.Action("SelectIntegrante","Home",new{key = @item.DNI})'>Datos personales</a>
+        <a href='@Url.Action("MostrarDatosFamiliares","Home",new{key = @item.DNI})'>Datos familiares</a>
+        <a href='@Url.Action("MostrarDatosInteres","Home",new{key = @item.DNI})'>Datos interes</a>
+        </div>
+    }   
+</section>
+
