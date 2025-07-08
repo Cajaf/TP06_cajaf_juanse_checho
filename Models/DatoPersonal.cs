@@ -2,20 +2,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 namespace TP02_Andraca.Models
 {
     public class DatoPersonal
     {
+        [JsonProperty]
+        public int Id{get;private set;}
+        [JsonProperty]
         public string Nombre {get; private set;}
+        [JsonProperty]
         public string Apellido {get; private set;}
+         [JsonProperty]
+        public string Email {get;private set;}
+         [JsonProperty]
+        public string Contraseña{get;private set;}
+        [JsonProperty]
         public DateTime FechaNacimiento {get; private set;}
+        [JsonProperty]
         public string Foto {get; private set;}
-        public DatoPersonal(string Nombre, string Apellido, DateTime FechaNacimiento, string Foto)
+        public DatoPersonal(int id,string nombre, string apellido,string email,string contraseña, DateTime fechanacimiento, string foto)
         {
-            this.Nombre = Nombre;
-            this.Apellido = Apellido;
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Email = email;
+            this.Contraseña=contraseña;
             this.FechaNacimiento = FechaNacimiento;
-            this.Foto = Foto;
+            this.Foto = foto;
         }
         public int ObtenerEdad()
         {
