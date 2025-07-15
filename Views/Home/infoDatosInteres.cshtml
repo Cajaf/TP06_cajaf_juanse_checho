@@ -1,6 +1,34 @@
-<h1>Datos de interes de @ViewBag.Nombre </h1>
-<ul>
-<li>Hobbie: @ViewBag.Hobbies </li>
-<li>Serie Favorita: @ViewBag.SeriesFavoritas </li>
-<li>Fecha Gustos Escolares: @ViewBag.GustosEscolares </li>
-</ul>
+<body>
+<header>
+</header>
+<main>
+<h1>Datos familiares de @ViewBag.Nombre </h1>
+ <ul>
+ @foreach(DatoFamiliar item in ViewBag.List2)
+    {
+        <h1>Tipo de interes:</h1>
+        @if(item.TipoInteres == 1)
+        {
+            <h1>Hobby</h1>
+        }
+        else if(item.TipoInteres == 2)
+        {
+            <h1>Serie</h1>
+        }
+        else if(item.TipoInteres == 3)
+        {
+            <h1>Amigo</h1>
+        }
+        else if(item.TipoInteres == 4)
+        {
+            <h1>Gusto</h1>
+        }
+
+        <h1>Interes:</h1>
+        <h1>@ViewBag.item.Interes</h1>
+
+    }
+
+ </ul>
+</main>
+</body>

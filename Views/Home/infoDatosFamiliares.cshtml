@@ -1,10 +1,16 @@
+
+<body>
+<header>
+</header>
+<main>
 <h1>Datos familiares de @ViewBag.Nombre </h1>
  <ul>
- @foreach(DatoFamiliar item in ViewBag.familiares)
+ @foreach(DatoFamiliar item in ViewBag.List)
     {
         <li>Nombre: @item.Nombre Apellido: @item.Apellido Parentesco: @item.Parentesco</li>
     }
  </ul>
- 
+ </main>
+</body>
  
     

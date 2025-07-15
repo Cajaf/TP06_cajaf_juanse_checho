@@ -15,32 +15,42 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Grupo.crearGrupo();
-        ViewBag.Integrantes = Grupo.Integrantess;
         return View("Index");
     }
-    public IActionResult SelectIntegrante(int key)
+    public IActionResult SelectIntegrante(string contraseña, string email)
     {
-        ViewBag.Nombre = Grupo.Integrantess[key].DatosPersonales.Nombre;
-        ViewBag.Apellido = Grupo.Integrantess[key].DatosPersonales.Apellido;
-        ViewBag.FechaNacimiento = Grupo.Integrantess[key].DatosPersonales.FechaNacimiento;
-        ViewBag.Edad = Grupo.Integrantess[key].DatosPersonales.ObtenerEdad();
-        ViewBag.Foto = Grupo.Integrantess[key].DatosPersonales.Foto;
-        return View("infoDatosPersonales");
-    }
-    
-    public IActionResult MostrarDatosFamiliares(int key)
+        string direccion = "Index";
+        int num = BD.Login(contraseña, email);
+        if(num != -1)
+        {
+            direccion = "infoDatosPersonales";
+            DatoPersonal Usuario = BD.GetUsuario(num);
+            ViewBag.usuario = Usuario;
+            ViewBag.num = num;
+            Sesion.IDUsuarioEnSesion = num;
+        }
+        return View(direccion);
+    }  
+    public IActionResult MostrarDatosFamiliares()
     {
-        ViewBag.Nombre = Grupo.Integrantess[key].DatosPersonales.Nombre;
-        ViewBag.familiares = Grupo.Integrantess[key].DatosFamiliares;
-        return View("infoDatosFamiliares");
+        string direccion = "Index";
+        if(Sesion.IDUsuarioEnSesion > 0)
+        {
+            direccion = "infoDatosFamiliares";
+            List<DatoFamiliar> DatosFamiliar = BD.GetDatoFamiliar(Sesion.IDUsuarioEnSesion);
+            ViewBag.List = DatosFamiliar;
+        }
+        return View(direccion);
     }
     public IActionResult MostrarDatosInteres(int key)
     {
-        ViewBag.Nombre = Grupo.Integrantess[key].DatosPersonales.Nombre;
-        ViewBag.Hobbies = Grupo.Integrantess[key].DatosIntereses.Hobbies;
-        ViewBag.SeriesFavoritas = Grupo.Integrantess[key].DatosIntereses.SeriesFavoritas;
-        ViewBag.GustosEscolares = Grupo.Integrantess[key].DatosIntereses.GustosEscolares;
-        return View("infoDatosInteres");
+        string direccion = "Index";
+        if(key >= 1)
+        {
+            direccion = "infoDatosInteres";
+            List<DatoInteres> Usuario = BD.GetDatoInteres(key);
+            ViewBag.List2 = Usuario;
+        }
+        return View(direccion);
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP02_Andraca")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36f98b1e771d2b69adaf961ba74bed1b8de3d25d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2039afbe1051347d958d9e0fbf82dec3b6253516")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP02_Andraca")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP02_Andraca")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

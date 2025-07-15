@@ -1,8 +1,21 @@
-<h1>Datos personales de @ViewBag.Nombre </h1>
+
+<body>
+<header>
+</header>
+<main>
+<h1>Datos personales de @ViewBag.usuario.Nombre </h1>
 <ul>
-<li>Nombre: @ViewBag.Nombre </li>
-<li>Apellido: @ViewBag.Apellido </li>
-<li>Fecha nacimiento: @ViewBag.FechaNacimiento </li>  
-<li>Edad: @ViewBag.Edad </li>
+<li>Nombre: @ViewBag.usuario.Nombre </li>
+<li>Apellido: @ViewBag.usuario.Apellido </li>
+<li>Fecha nacimiento: @ViewBag.usuario.FechaNacimiento </li>  
+<li>Edad: @ViewBag.usuario.Edad </li>
+<li>Email: @ViewBag.usuario.Email </li>
 </ul>
-<img src="/img/@ViewBag.foto" alt="foto">
+<img src="/img/@ViewBag.usuario.foto" alt="foto">
+
+ <a href='@Url.Action("MostrarDatosFamiliares","Home")'> Datos Familiar</a>
+
+ <a href='@Url.Action("MostrarDatosInteres","Home")'>Datos Interes</a>
+
+</main>
+</body>

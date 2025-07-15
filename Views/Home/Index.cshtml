@@ -1,18 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-<h1>Presentacion del grupo</h1>
-<section>
-    
-    
-    @foreach(Integrante item in ViewBag.Integrantes.Values)
-    {
-        <div>
-        <h2>@item.DatosPersonales.Nombre</h2>
-        <a href='@Url.Action("SelectIntegrante","Home",new{key = @item.DNI})'>Datos personales</a>
-        <a href='@Url.Action("MostrarDatosFamiliares","Home",new{key = @item.DNI})'>Datos familiares</a>
-        <a href='@Url.Action("MostrarDatosInteres","Home",new{key = @item.DNI})'>Datos interes</a>
-        </div>
-    }   
-</section>
 
+<body>
+<header>
+</header>
+main
+<h1>home</h1>
+<form action='@Url.Action("SelectIntegrante","Home")' method= "post">
+<input type="text" name="email" value="ingresar email"/>
+<input type="password" name="contraseña" value="ingresar contraseña"/>
+<button type="submit" class="comenzar">Enviar respuesta</button>
+</form>
+</body>
