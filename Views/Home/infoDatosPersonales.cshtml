@@ -1,21 +1,18 @@
 
 <body>
 <header>
+<a href='@Url.Action("MostrarDatosPersonales","Home")'> Inicio</a>
+<a href='@Url.Action("Deslogearse","Home")'> Deslogearse</a>
 </header>
 <main>
 <h1>Datos personales de @ViewBag.usuario.Nombre </h1>
-<ul>
-<li>Nombre: @ViewBag.usuario.Nombre </li>
-<li>Apellido: @ViewBag.usuario.Apellido </li>
-<li>Fecha nacimiento: @ViewBag.usuario.FechaNacimiento </li>  
-<li>Edad: @ViewBag.usuario.Edad </li>
-<li>Email: @ViewBag.usuario.Email </li>
-</ul>
-<img src="/img/@ViewBag.usuario.foto" alt="foto">
 
- <a href='@Url.Action("MostrarDatosFamiliares","Home")'> Datos Familiar</a>
 
- <a href='@Url.Action("MostrarDatosInteres","Home")'>Datos Interes</a>
-
+<h3>Nombre: @ViewBag.usuario.Nombre </h3>
+<h3>Apellido: @ViewBag.usuario.Apellido </h3>
+<h3>Fecha nacimiento: @ViewBag.usuario.FechaNacimiento</h3>
+<img src= "/@ViewBag.usuario.Foto" alt="Foto">
+<a href='@Url.Action("MostrarDatosFamiliares","Home")'> Datos Familiar</a>
+<a href='@Url.Action("MostrarDatosInteres","Home")'>Datos Interes</a>
 </main>
 </body>

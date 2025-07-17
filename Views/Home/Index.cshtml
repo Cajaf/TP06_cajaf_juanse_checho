@@ -4,12 +4,12 @@
 
 <body>
 <header>
+<a href='@Url.Action("MostrarDatosPersonales","Home")'> Inicio</a>
 </header>
-main
 <h1>home</h1>
 <form action='@Url.Action("SelectIntegrante","Home")' method= "post">
-<input type="text" name="email" value="ingresar email"/>
-<input type="password" name="contraseña" value="ingresar contraseña"/>
+<input type="text" name="email" placeholder="Ingresar Email"/>
+<input type="password" name="contraseña" placeholder="Ingresar Contraseña"/>
 <button type="submit" class="comenzar">Enviar respuesta</button>
 </form>
 </body>

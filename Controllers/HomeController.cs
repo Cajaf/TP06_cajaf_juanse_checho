@@ -31,6 +31,25 @@ public class HomeController : Controller
         }
         return View(direccion);
     }  
+
+    public IActionResult MostrarDatosPersonales()
+    {
+        string direccion = "Index";
+        if(Sesion.IDUsuarioEnSesion > 0)
+        {
+            direccion = "infoDatosPersonales";
+            DatoPersonal usuario = BD.GetUsuario(Sesion.IDUsuarioEnSesion);
+            ViewBag.Usuario = usuario;
+        }
+        return View(direccion);
+    }
+
+    public IActionResult Deslogearse()
+    {
+        Sesion.IDUsuarioEnSesion = -1;
+        return View("Index");
+    }
+
     public IActionResult MostrarDatosFamiliares()
     {
         string direccion = "Index";
@@ -42,13 +61,13 @@ public class HomeController : Controller
         }
         return View(direccion);
     }
-    public IActionResult MostrarDatosInteres(int key)
+    public IActionResult MostrarDatosInteres()
     {
         string direccion = "Index";
-        if(key >= 1)
+        if(Sesion.IDUsuarioEnSesion > 0)
         {
             direccion = "infoDatosInteres";
-            List<DatoInteres> Usuario = BD.GetDatoInteres(key);
+            List<DatoInteres> Usuario = BD.GetDatoInteres(Sesion.IDUsuarioEnSesion);
             ViewBag.List2 = Usuario;
         }
         return View(direccion);

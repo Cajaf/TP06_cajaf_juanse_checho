@@ -8,16 +8,17 @@ namespace TP02_Andraca.Models
     {
 
         
-        public int Id{get;private set;}
+        public int ID{get;private set;}
         public int IdUsuario{get;private set;}
         public int TipoInteres{get;private set;}
         public string Interes{get;private set;}
-        public DatoInteres(int id, int idusuario, int tipointereses,string interes)
+        public DatoInteres() { }
+        public DatoInteres(int ID, int IdUsuariosuario, int TipoIntereses,string Interes)
         {
-         this.Id= id;
-         this.IdUsuario=idusuario;  
-         this.TipoInteres=tipointereses;
-         this.Interes=interes;
+         this.ID = ID;
+         this.IdUsuario = IdUsuario;  
+         this.TipoInteres = TipoIntereses;
+         this.Interes = Interes;
         }
        
     }

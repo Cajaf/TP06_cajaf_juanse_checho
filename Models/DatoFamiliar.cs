@@ -12,14 +12,17 @@ namespace TP02_Andraca.Models
         public string Apellido {get; private set;}
         public string Parentesco {get; private set;}
         public string Descripcion{get;private set;}
+    
+    public DatoFamiliar() { }
 
-    public DatoFamiliar(int id,int idusuario,string nombre, string apellido, string parentesco,string descripcion)
+    public DatoFamiliar(int Id,int IdUsuario,string Nombre, string Apellido, string Parentesco,string Descripcion)
     {
-        this.Id = id;
-        this.IdUsuario= idusuario;
-        this.Nombre = nombre;
-        this.Apellido = apellido;
-        this.Parentesco = parentesco;
+        this.Id = Id;
+        this.IdUsuario= IdUsuario;
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
+        this.Parentesco = Parentesco;
+        this.Descripcion = Descripcion;
     }
     }
     

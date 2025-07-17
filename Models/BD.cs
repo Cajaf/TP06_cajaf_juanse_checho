@@ -28,7 +28,7 @@ public static DatoPersonal GetUsuario(int id)
 DatoPersonal usuario;
 using(SqlConnection connection = new SqlConnection(_connectionString))
 {
-    string query = "SELECT * FROM DATOPERSONAL WHERE ID = pId";
+    string query = "SELECT * FROM DATOPERSONAL WHERE ID = @pId";
      usuario = connection.QueryFirstOrDefault<DatoPersonal>(query, new{pId = id});
 }
 return(usuario);
@@ -39,7 +39,7 @@ public static List<DatoFamiliar> GetDatoFamiliar(int id)
 List<DatoFamiliar> datoFamiliar = new List<DatoFamiliar>();
 using(SqlConnection connection = new SqlConnection(_connectionString))
 {
-    string query = "SELECT ID FROM DATOPERSONAL WHERE ID = pId";
+    string query = "SELECT * FROM DATOFAMILIAR WHERE IDUSUARIO = @pId";
     datoFamiliar = connection.Query<DatoFamiliar>(query, new{pId = id}).ToList();
 }
 return(datoFamiliar);
@@ -48,7 +48,12 @@ return(datoFamiliar);
 public static List<DatoInteres> GetDatoInteres(int id)
 {
 List<DatoInteres> datoInteres = new List<DatoInteres>();
-    return(datoInteres);
+using(SqlConnection connection = new SqlConnection(_connectionString))
+{
+    string query = "SELECT * FROM DATOINTERES WHERE IDUSUARIO = @pId";
+    datoInteres = connection.Query<DatoInteres>(query, new{pId = id}).ToList();
+}
+return(datoInteres);
 }
 
 }

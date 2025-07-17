@@ -13,15 +13,17 @@ namespace TP02_Andraca.Models
         public string Contraseña{get;private set;}
         public DateTime FechaNacimiento {get; private set;}
         public string Foto {get; private set;}
-        public DatoPersonal(int id,string nombre, string apellido,string email,string contraseña, DateTime fechanacimiento, string foto)
+
+        public DatoPersonal() { }
+        public DatoPersonal(int ID,string Nombre, string Apellido,string Email,string Contraseña, DateTime FechaNacimiento, string Foto)
         {
-            this.Id = id;
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.Email = email;
-            this.Contraseña=contraseña;
+            this.Id = ID;
+            this.Nombre = Nombre;
+            this.Apellido = Apellido;
+            this.Email = Email;
+            this.Contraseña = Contraseña;
             this.FechaNacimiento = FechaNacimiento;
-            this.Foto = foto;
+            this.Foto = Foto;
         }
         public int ObtenerEdad()
         {

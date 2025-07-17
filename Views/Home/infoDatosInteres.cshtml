@@ -1,34 +1,33 @@
 <body>
 <header>
+<a href='@Url.Action("MostrarDatosPersonales","Home")'> Inicio</a>
+<a href='@Url.Action("Deslogearse","Home")'> Deslogearse</a>
 </header>
 <main>
-<h1>Datos familiares de @ViewBag.Nombre </h1>
- <ul>
- @foreach(DatoFamiliar item in ViewBag.List2)
+<h1>Datos familiares</h1>
+ @foreach(DatoInteres item in ViewBag.List2)
     {
-        <h1>Tipo de interes:</h1>
+        <h2>Tipo de interes:</h2>
         @if(item.TipoInteres == 1)
         {
-            <h1>Hobby</h1>
+            <h4>Hobby</h4>
         }
         else if(item.TipoInteres == 2)
         {
-            <h1>Serie</h1>
+            <h4>Serie</h4>
         }
         else if(item.TipoInteres == 3)
         {
-            <h1>Amigo</h1>
+            <h4>Amigo</h4>
         }
         else if(item.TipoInteres == 4)
         {
-            <h1>Gusto</h1>
+            <h4>Gusto</h4>
         }
 
-        <h1>Interes:</h1>
-        <h1>@ViewBag.item.Interes</h1>
+        <h2>Interes:</h2>
+        <h4>@item.Interes</h4>
 
     }
-
- </ul>
 </main>
 </body>
